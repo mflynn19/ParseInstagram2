@@ -8,10 +8,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -61,6 +58,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun submitPost(description: String, user: ParseUser, file: File) {
+        val pb = findViewById<ProgressBar>(R.id.pbLoading);
+        pb.setVisibility(ProgressBar.VISIBLE);
         val post = Post()
         post.setDescription(description)
         post.setUser(user)
@@ -74,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             else{
                 Log.i(TAG, "successfully posted")
                 Toast.makeText(this, "Great post!", Toast.LENGTH_SHORT).show()
+                pb.setVisibility(ProgressBar.INVISIBLE);
             }
         }
     }

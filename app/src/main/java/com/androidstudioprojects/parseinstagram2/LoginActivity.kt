@@ -8,9 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.parse.ParseObject
 import com.parse.ParseUser
-import kotlin.math.sign
 
 
 class LoginActivity : AppCompatActivity() {
@@ -38,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             loginUser(username,password)
         }
 
-        findViewById<Button>(R.id.btnSignUp).setOnClickListener{
+        findViewById<TextView>(R.id.tvSignUp).setOnClickListener{
             val username = findViewById<EditText>(R.id.etUsername).text.toString()
             val password = findViewById<EditText>(R.id.etPassword).text.toString()
             signUpuser(username,password)
