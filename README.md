@@ -2,7 +2,7 @@
 
 **Parse Instagram 2** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: **6** hours spent in total
+Time spent: **8** hours spent in total
 
 ## User Stories
 
@@ -15,9 +15,9 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] User sees app icon in home screen and styled bottom navigation view
+- [X] User sees app icon in home screen and styled styled launch screen that looks like the real Instagram page.
 - [ ] Style the feed to look like the real Instagram feed.
-- [ ] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
+- [X] After the user submits a new post, show an indeterminate progress bar while the post is being uploaded to Parse.
 
 
 ## Video Walkthrough
