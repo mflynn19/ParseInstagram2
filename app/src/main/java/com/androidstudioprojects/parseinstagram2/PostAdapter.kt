@@ -14,16 +14,19 @@ class PostAdapter (val context : Context, val posts:List<Post>): RecyclerView.Ad
         val tvUsername : TextView
         val ivImage : ImageView
         val tvDescription : TextView
+        val tvCreatedAt : TextView
 
         init {
             tvUsername = itemView.findViewById(R.id.tvUserName)
             ivImage = itemView.findViewById(R.id.ivImage)
             tvDescription = itemView.findViewById(R.id.tvDescription)
+            tvCreatedAt = itemView.findViewById(R.id.tvCreatedAt)
         }
 
         fun bind(post:Post){
             tvDescription.text  = post.getDescription()
             tvUsername.text = post.getUser()?.username
+            tvCreatedAt.text = TimeFormatter.getTimeDifference(post.createdAt.toString())
             Glide.with(itemView.context).load(post.getImage()?.url).into(ivImage)
         }
     }
